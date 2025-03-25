@@ -9,9 +9,14 @@
   <%- include('./partials/nav') %>
 
   <h1>The Green Byte Bistro</h1>
-  <p><%= RESTAURANT.name %></p>
-  <p><%= RESTAURANT.address %></p>
-  <p><%= RESTAURANT.phone %></p>
+  <p>Welcome to <%= RESTAURANT.name %></p>
+  <p>Address: <%= RESTAURANT.address %></p>
+  <p>Phone: <%= RESTAURANT.phone %></p>
+  <% if (RESTAURANT.isOpen) { %>
+    <p>Yes, we are open!</p>
+  <% } else { %>
+    <p>Sorry, we are closed.</p>
+  <% } %>
   <!-- <p><%= RESTAURANT.name %></p> -->
 </body>
 </html>

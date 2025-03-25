@@ -58,7 +58,8 @@ app.get('/', (req, res) => {
     RESTAURANT: {
       name: "The Green Byte Bistro",
       address: "742 Evergreen Rd, Mapleview, OS 45502",
-      phone: "555-321-9876"
+      phone: "555-321-9876",
+      isOpen: RESTAURANT.isOpen
     }
   });
 });
@@ -71,7 +72,7 @@ app.get('/menu/:category', (req, res) => {
   const { category } = req.params;
   const menuItems = RESTAURANT.menu.filter(item => item.category === category);
   const displayCategory = category.charAt(0).toUpperCase() + category.slice(1);
-  
+
   res.render('category.ejs', { menuItems, category: displayCategory });
 });
 
